@@ -1,0 +1,103 @@
+5)(b)
+#include<iostream>
+using namespace std;
+class num
+{
+	int a,b;
+	public:
+		num()
+		{
+			a=10,b=20;
+		}
+		num(int x,int y)
+		{
+			a=x;
+			b=y;
+		}
+		void add()
+		{
+			cout<<"sum of "<< a <<"and"<< b <<"is:"<<a+b<<endl;
+		}
+		
+};
+int main()
+{
+	num n;
+	n.add();
+	num x(1,2);
+	x.add();
+	return 0;
+}
+output
+sum of 10and20is:30
+sum of 1and2is:3
+
+
+5)(a)
+#include<iostream>
+using namespace std;
+class test
+{
+	public:
+		test()
+		{
+			cout<<"\n Constructor called ";
+		}
+		~ test ()
+		{
+			cout<<"\n Destructor called "<<endl;
+		}
+};
+int main()
+{
+	test t;
+	return 0;
+}
+output:
+ Constructor called
+ Destructor called
+
+
+5)(c)
+#include<iostream>
+using namespace std;
+class test
+{
+	int i;
+	public:
+		test()
+		{
+			cout<<"Default constructor "<<endl;
+			i=0;
+		}
+		test (int a)
+		{
+			cout<<"Parameterised onstructor "<<endl;
+			i=a;
+		}
+		test (const test &x)
+		{
+			cout<<"copy constructor "<<endl;
+			i=x.i;
+		}
+		void show()
+		{
+			cout<<i<<endl;
+		}
+};
+int main()
+{
+	test a;
+	a.show();
+	test b(100);
+	b.show();
+	test c(b);
+	c.show();
+}
+output:
+Default constructor
+0
+Parameterised onstructor
+100
+cpoy constructor
+100
