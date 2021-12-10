@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int factorial(int n);
+int main()
+{
+int n;
+cout<<"Enter a position integer:";
+cin>>n;
+cout<<"factorial of "<<n<<"="<<factorial(n)<<endl;
+return 0;
+}
+int factorial(int n)
+{
+if(n>1)
+   return n*factorial(n-1);
+else
+   return 1;
+}
+Output:
+Enter a position integer:4
+factorial of 4=24
