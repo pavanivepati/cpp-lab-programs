@@ -4,32 +4,86 @@ class Student
 {
    int rno;
   public:
-    void getnumber()
+    void getNumber()
     {
-      cout<<"praharshita"<<endl;
-      cout<<"Enter Roll no:";
-      cin>>rno;
+	cout<<"Enter Roll no:";
+    	cin>>rno;
     }
-    void putnumber()
+    void putNumber()
     {
-      cout<<"\n\nt Roll no:"<<rno<<"\n";
+    	cout<<"\n\n\t Roll no:"<<rno<<"\n";
     }
 };
 class test: virtual public Student
 {
   public:
     int part1,part2;
-    void get marks()
+    void getMarks()
     {
-     cout<<"Enter marks\n";
-     cout<<"part1";
-     cin>>part1;
-    cout<<"Part2";
-    cin>>part2;
+    	cout<<"Enter marks\n";
+    	cout<<"Part1:";
+    	cin>>part1;
+    	cout<<"Part2:";
+    	cin>>part2;
     }
+    void putMarks()
+	{
+    	cout<<"\t Marks obtained\n";
+    	cout<<"\n\t part1:"<<part1;
+		cout<<"\n\t part2:"<<part2;
+	}
+};
+class Sports:public virtual Student
+{
+	public:
+		int score;
+		void getScore()
+		{
+			cout<<"Enter sports score:";
+			cin>>score;
+		}
+		void putScore()
+		{
+			cout<<"\n\t sports score is:"<<score;
+		}
+};
+class Result:public test,public Sports
+{
+	int total;
+	public:
+		void display()
+		{
+			total=part1+part2+score;
+			putNumber();
+			putMarks();
+			putScore();
+			cout<<"\n\t Total Score:"<<total<<endl;
+		}
+};
     
 int main()
 {
-
-return 0;
+	Result obj;
+	obj.getNumber();
+	obj.getMarks();
+	obj.getScore();
+	obj.display();
+	return 0;
 }
+
+
+output:
+Enter Roll no:56
+Enter marks
+Part1:34
+Part2:67
+Enter sports score:78
+
+
+         Roll no:56
+         Marks obtained
+
+         part1:34
+         part2:67
+         sports score is:78
+         Total Score:179
